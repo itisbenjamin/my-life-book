@@ -24,10 +24,10 @@ Store data and are the building blocks of Javascript.
 
 Each variable is defined by a case-sensitive name.
 
-{% highlight js %}
+```js
 var myVariable = "data"
 console.log(myVariable)
-{% endhighlight %}
+```
 
 **String**
 
@@ -49,10 +49,10 @@ An expression can combine numbers, string and variables to output a value. They 
 
 The four basic forms of arithmetic are represented by symbols called operators and are used when creating expressions.
 
-{% highlight js %}
+```js
 var myNumber = 10 + 2
 console.log(myNumber)
-{% endhighlight %}
+```
 
 The same as C grammar, they are `+`, `-`, `*`, `/` and `%`。
 
@@ -60,23 +60,23 @@ The same as C grammar, they are `+`, `-`, `*`, `/` and `%`。
 
 Booleans can be used to store true or false outcomes.
 
-{% highlight js %}
+```js
 var myBooleans = true
 console.log(myBooleans)
-{% endhighlight %}
+```
 
 **Comparisons**
 
 There are six kinds of way to compare data.
 
-{% highlight js %}
+```js
 > Greater than
 < Less than
 >= Greater than or equal to
 <= Less than or equal to
 != Not equal to 
 == Equal to
-{% endhighlight %}
+```
 
 Booleans work closely with comparision operators and rely on them to determine whether the boolean will output a true or false value.
 
@@ -97,10 +97,10 @@ You can put your variable's name after the keyword `var`.
 
 To assign a value, you can use `=`. 
 
-{% highlight js %}
+```js
 var myName = "Ben"
 console.log(myName)
-{% endhighlight %}
+```
 
 **Reassignment**
 
@@ -111,21 +111,21 @@ Variables are containers for values and you can replace the existing value in a 
 Data types: number, string, boolean.   
 Variables can store values of any data type.
 
-{% highlight js %}
+```js
 var myString = "String"
 var myNumber = 33
 var myBoolean = true
-{% endhighlight %}
+```
 
 **Undefined**
 
 The data type undefined denotes the absence of a value.  
 If you declare a variable, but don't assign a value, it automatically holds the value undefined.
 
-{% highlight js %}
+```js
 var myNothing
 console.log(myNothing)
-{% endhighlight %}
+```
 
 Then the computher will output "undefined".
 
@@ -137,10 +137,10 @@ When a variable is given a value it is called initialization.
 
 You can use `===` and `!==` to compare the value and data type. 
 
-{% highlight js %}
+```js
 var Something = 10 === "10"
 console.log(Something)
-{% endhighlight %}
+```
 
 Then the computer will output `false`. 
 
@@ -149,13 +149,13 @@ Then the computer will output `false`.
 Functions are the verbs of programming.  
 They tell the computer to do a set of actions.   
 
-{% highlight js %}
+```js
 function myFunction(){
 console.log("Function!")
 }
 
 myFunction()
-{% endhighlight %}
+```
 
 **Console.log**
 
@@ -170,26 +170,26 @@ You can use the keyword `function` to declare a funcion and give is an action to
 You can also use a variable to store function.   
 This can make it more easier when we use a funcion.
 
-{% highlight js %}
+```js
 var myFunction = function(){
 console.log("Funciont!")
 }
 
 myFunction()
-{% endhighlight %}
+```
 
 **Parameters**
 
 Parameters are variables you give a function as inputs inside `()`.  
 Parameters are given specific values when you call the function. 
 
-{% highlight js %}
+```js
 var getCost = function(price){
 console.log( "$" + price )
 }
 
 getCost(20)
-{% endhighlight %}
+```
 
 Then the `price` is a parameter. 
 
@@ -208,19 +208,19 @@ Arguments are the values you assign to parameters.
 
 If a function with a parameter is called with a missing argument, that parameter is assigned the value undefined by default.
 
-{% highlight js %}
+```js
 function say(myname){
   console.log(myname)
 }
 
 say()
-{% endhighlight %}
+```
 
 **Body**
 
 Anything inside `()` is considered the body of the function, and is executed when the function is called.
 
-{% highlight js %}
+```js
 function getcost(price){
   var tip = price * 0.2
   var cost = price + tip
@@ -228,8 +228,7 @@ console.log("$" + cost)
 }
 
 getcost(20)
-{% endhighlight %}
+```
 
-****
 
 

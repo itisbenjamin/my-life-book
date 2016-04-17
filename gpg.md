@@ -12,40 +12,40 @@ Linux系統下安裝指令：
 
 `$ gpg --gen-key`
 
-{% highlight shell %}
+```sh
 Please select what kind of key you want: 
 (1) RSA and RSA(default)
 (2) DSA and Elgamal
 (3) DSA(sign only)
 (4) RSA(sign only)
 Your selection?
-{% endhighlight %}
+```
     
 默認RSA。
 
-{% highlight shell %}
+```sh
 RSA keys may be between 1024 and 4096 bits long.
 What keysize do you want?
-{% endhighlight %}
+```
     
 默認2048位。
 
-{% highlight shell %}
+```sh
 Please specify how long the key should e valid.
 0 = key does not expire
 <n> = key expires in n days
 <n> w = key expires in n months
 <n> y = key expires in n years
 Key is valid for? (0)
-{% endhighlight %}
+```
     
 默認永久有效。
 
-{% highlight shell %}
+```sh
 Real name: 
 Email address: 
 Comment: 
-{% endhighlight %}
+```
     
 這三行信息用以產生UID標識。
 
@@ -201,5 +201,5 @@ clearsign參數將簽名與原信息合併後生成一個新文件。
 <h4>「信息安全並非是讓人懷疑一切，而是讓每個人都能夠保有隱私的權利。」</h4>
 </center>
 
-<div class="eof"></div>
+
 

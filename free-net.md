@@ -19,12 +19,12 @@
 因為官網被牆，Lantern提供[Github倉庫](https://github.com/getlantern/lantern-binaries)下載。
 
 也可以使用命令行：  
-{% highlight shell %}
+```sh
 $ git clone https://github.com/getlantern/lantern.git
 $ cd lantern
 $ make lantern
 $ ./lantern
-{% endhighlight %}
+```
 
 優點：免費，較穩定，可以滿足日常需求。
 
@@ -42,15 +42,15 @@ Shadowsocks適合自行搭建VPS的用戶使用，然而自行搭建VPS有一些
 
 OS X命令行：
 
-{% highlight shell %}
+```sh
 $ brew install shadowsocks-libev
-{% endhighlight %}
+```
 
 Linux命令行：
 
-{% highlight shell %}
+```sh
 $ pip install shadowsocks
-{% endhighlight %}
+```
 
 如果你沒有自己的VPS服務器，也可以使用[iShadowsocks](http://ishadowsocks.net)所提供的服務器來進行連結。其實對於使用量不高的用戶我更建議使用這些已經搭建完成的服務器，主要是自行搭建的VPS有如下幾個不方便的地方：
 

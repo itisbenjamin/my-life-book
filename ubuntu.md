@@ -29,9 +29,9 @@ Linux系统完全開源，直接[Ubuntu官网](http://www. ubuntu. com)下载就
 
 从官网上下载下来的是一个`iso`镜像文件，需要进行烧录才能够安装，如果手边有闲置的光盘可以用是最好的，直接烧录进去就可以了。如果没有光盘，可以利用软件烧录在U盘里。在Ubuntu之前这台电脑使用的是Windows系统，所以我使用的是[ISO to USB](http://www. isotousb. com)来进行烧录(這是一個開源免費軟件），对于OS X以及Linux系统可以使用`dd`命令進行裸讀寫，命令行如下：
 
-{% highlight shell %}
+```sh
 $ dd bs=4M if=~/xxx.iso of=/dev/sdb
-{% endhighlight %}
+```
 
 *`if`參數後為ISO文件路徑，`of`參數後為輸出路徑。*
 
@@ -57,22 +57,22 @@ $ dd bs=4M if=~/xxx.iso of=/dev/sdb
 
 如果非要在字符界面編輯中文，那麼可以使用`fbterm`來實現，命令行：
 
-{% highlight shell %}
+```sh
 $ sudo apt-get install fbterm fcitx im-config fcitx-frontend-fbterm
-{% endhighlight %}
+```
 
 默認必須在root用戶下才能使用，因此需要執行如下命令賦予普通用戶使用權：
 
-{% highlight shell %}
+```sh
 $ gpasswd -a user viedo
 $ chmod u+s /usr/bin/fbterm
-{% endhighlight %}
+```
 
 最後修改`~/.fbtermrc`配置，添加：
 
-{% highlight shell %}
+```sh
 input-method=fcitx-fbterm
-{% endhighlight %}
+```
 
 然而這樣仍舊體驗不是很好（不如圖形界面），所以我的建議是，如果你要在終端內編輯中文，還是回到圖形界面的Terminal吧。
 
@@ -86,7 +86,7 @@ input-method=fcitx-fbterm
 
 和OS X不同，Linux系統下不能直接打開Terminal配置文件然後設定為`default`，需要在用戶根目錄下創建一個`solarized.sh`的文件，然後將下面的代碼寫進去：
 
-{% highlight shell %}
+```sh
 #!/bin/sh
 #
 # Shell script that configures gnome-terminal to use solarized theme
@@ -121,19 +121,19 @@ gconftool-2 --set "/apps/gnome-terminal/profiles/Default/use_theme_colors" --typ
 gconftool-2 --set "/apps/gnome-terminal/profiles/Default/palette" --type string "$PALETTE"
 gconftool-2 --set "/apps/gnome-terminal/profiles/Default/background_color" --type string "$BG_COLOR"
 gconftool-2 --set "/apps/gnome-terminal/profiles/Default/foreground_color" --type string "$FG_COLOR"
-{% endhighlight %}
+```
 
 接下來修改文件權限：
 
-{% highlight shell %}
+```sh
 $ chmod -x solarized.sh
-{% endhighlight %}
+```
 
 最後運行文件：
 
-{% highlight shell %}
+```sh
 $ ./solarized dark
-{% endhighlight %}
+```
 
 這樣就更改了Terminal的整體配色方案。
 
@@ -145,15 +145,15 @@ Linux基本就是一個乾淨的系統框架，很多東西都是需要自行搭
 
 這是一個非常常用的安全刪除命令，它在OS X系統中是自帶的，然而Ubuntu需要自行安裝：
 
-{% highlight shell %}
+```sh
 $ sudo apt-get install secure delete
-{% endhighlight %}
+```
 
 使用命令行：
 
-{% highlight shell %}
+```sh
 $ srm file-name
-{% endhighlight %}
+```
 
 使用`srm`命令會將文件先覆寫38次再刪除，避免了刪除後被還原的可能性。
 
@@ -165,23 +165,23 @@ GPG對我來說必不可少，在Ubuntu下是自帶的，如果使用其他Linux
 
 磁盤加密軟件，重視隱私安全的人必不可少。同樣，Ubuntu系統安裝VeraCrypt比較麻煩，有兩個選擇，第一是從[VeraCrypt官網](https://veracrypt.codeplex.com)上下載源碼自己編譯，第二是採用下面的命令行：
 
-{% highlight shell %}
+```sh
 $ sudo add-apt-repository ppa:unit193/encryption
 $ sudo apt-get update
 $ sudo apt-get install veracrypt
-{% endhighlight %}
+```
 
 最後運行VeraCrypt：
 
-{% highlight shell %}
+```sh
 $ veracrypt
-{% endhighlight %}
+```
 
 卸載命令：
 
-{% highlight shell %}
+```sh
 $ sudo apt-get remove veracrypt
-{% endhighlight %}
+```
 
 ## 優點
 

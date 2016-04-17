@@ -18,11 +18,11 @@
 
 最後在`.vimrc`的配置中添加：
 
-{% highlight html %}
+```raw
 syntax enable
 set background=dark
 colorscheme solarized
-{% endhighlight %}
+```
 
 具體更多配置方案可以參見solarized的README。
 
@@ -58,20 +58,20 @@ Pathogen會在`.vim`目錄下通過`bundle`進行管理，這樣`.vim`文件夾�
 
 如果對文件列表高亮要求不是很高，可以在`.bash_profile`中設置`ls -G`的`alias`，我用的是Coreutils插件來實現這一點。
 
-{% highlight shell %}
+```sh
 $ brew install coreutils
 $ gdircolors --print-database > ~/.dir_colors
-{% endhighlight %}
+```
 
 最後配置`.bash_profile`
 
-{% highlight shell %}
+```raw
 if brew list | grep coreutils > /dev/null ; then
   PATH="$(brew --prefix coreutils)/libexec/gnubin:$PATH"
   alias ls='ls -F --show-control-chars --color=auto'
   eval `gdircolors -b $HOME/.dir_colors`
 fi
-{% endhighlight %}
+```
 
 ## Powerline
 
@@ -83,12 +83,12 @@ fi
 
 最後在`.vimrc`中進行配置：
 
-{% highlight html %}
+```raw
 set guifont=PoerlineSymbols\for\Powerline
 set nocompatible
 set t_Co=256
 let g:Powerline_symbols = 'fancy'
-{% endhighlight %}
+```
 
 ## .vimrc
 
@@ -98,7 +98,7 @@ let g:Powerline_symbols = 'fancy'
 
 新建`.c`, `.h`, `.sh`, `.java`文件時自動插入描述的配置方法。
 
-{% highlight shell %}
+```raw
 autocmd BufNewFile *.cpp,*.[ch],*.sh,*.java exec ":call SetTitle()"
 
 func SetTitle()
@@ -138,11 +138,11 @@ else
 	call append(line(".")+5, "")
 
 endif
-{% endhighlight %}
+```
 
 下面是自動插入題頭的配置：
 
-{% highlight shell %}
+```raw
 if &filetype == 'cpp'
 
 	call append(line(".")+6, "#include<iostream>")
@@ -164,7 +164,7 @@ endif
 autocmd BufNewFile * normal G
 
 endfunc
-{% endhighlight %}
+```
 
 可以根據自己的需要進行添改。
 
@@ -180,7 +180,7 @@ endfunc
 
 下面是C，C++自動編譯運行快捷鍵配置。
 
-{% highlight shell %}
+```raw
 map <F5> :call CompileRunGcc()<CR>
 
 func! CompileRunGcc()
@@ -212,7 +212,7 @@ func! CompileRunGcc()
 	endif
 
 endfunc
-{% endhighlight %}
+```
 	
 ---
 

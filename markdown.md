@@ -202,7 +202,7 @@ Markdown支持網絡圖片鏈接，也支持調用本地服務器內的圖片。
 
 整體插入一整段代碼框時，需要在代碼前加入4個空格，或1個Tab。
 
-{% highlight html %}
+```html
 <div class="post-header-container {% if page.cover %}has-cover{% endif %}" {% if page.cover %}    style="background-image: url({{ page.cover | prepend: site.baseurl }});"{% endif %}>
   <div class="scrim {% if page.cover %}has-cover{% endif %}">
     <header class="post-header">
@@ -211,7 +211,7 @@ Markdown支持網絡圖片鏈接，也支持調用本地服務器內的圖片。
     </header>
     </div>
 </div>
-{% endhighlight %}
+```
 
 ## 特殊符號
 
@@ -289,20 +289,20 @@ Markdown語法不支持錨點，需要通過HTML語法實現。
 
 ### 標題錨點
 
-{% highlight html %}
+```html
 [Hello World](#hello)
 <h2 id="hello">Hello World</h2>
-{% endhighlight %}
+```
 
 ### 內容錨點
 
-{% highlight html %}
+```html
 <a href="#world">Explore a new world.</a>
 <a name="world">This is a new world.</a>
-{% endhighlight %}
+```
 
 *注意：錨點命名不可與頁面元素形成衝突，否則會造成難以預料的後果。*
 
-<div class="eof"></div>
+
 
 

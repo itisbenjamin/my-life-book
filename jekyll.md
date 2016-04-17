@@ -12,7 +12,7 @@ Jekyll依賴於ruby開發平台。
 
 通過`$ jekyll new SiteName`目錄可以迅速在當前目錄下生成一個基本的Jekyll結構目錄。
 
-{% highlight shell %}
+```sh
 .
 |-- _config.yml
 |-- _includes/
@@ -28,7 +28,7 @@ Jekyll依賴於ruby開發平台。
 |   |-- feed.yml
 |-- _site/
 |-- index.html
-{% endhighlight %}
+```
 
 **_config.yml**
 
@@ -49,11 +49,11 @@ Jekyll依賴於ruby開發平台。
 
 在使用第一層配置時，使用layout來指定:   
 
-{% highlight yml %}
+```yml
 ---
 layout: page
 ---
-{% endhighlight %}
+```
 
 **_posts**
 
@@ -80,26 +80,26 @@ Jekyll用於生成網站的文件，需要在`.gitignore`中屏蔽。
 
 **時區**
 
-{% highlight yml %}
+```yml
 # timezone: America/Argentina/San_Luis
 timesone: Timesone
-{% endhighlight %}
+```
 
 **鏈接格式**
 
 Post中的URL格式通過`permalink`來配置。
 
-{% highlight yml %}
+```yml
 # /2016/01/01/title.html
 permalink: /:year/:month/:day/:title.html
 
 # /01-01-2016/title.html
 permalink: /:month-:day-:year/:title.html
-{% endhighlight %}
+```
 
 同時也有已有配置可以直接設置。
 
-{% highlight yml %}
+```yml
 # /:category/:year/:month/:day/:title.html
 permalink: date
 
@@ -108,16 +108,16 @@ permalink: pretty
 
 # /:category/:title.html
 permalink: none
-{% endhighlight %}
+```
 
 **分頁**
 
 文章分頁變量：`paginate`, `paginate_path`。
 
-{% highlight yml %}
+```yml
 paginate: 5
 paginate_path: "blog/page:num/"
-{% endhighlight %}
+```
 
 其中`/blog/`目錄為`baseurl`目錄。`page`是字符常量，變量是`:num`分頁頁碼，自動從第二頁開始編碼。
 
@@ -126,7 +126,7 @@ paginate_path: "blog/page:num/"
 設置`author`, `layout`等默認值。  
 在設定後可以隨時通過`post`題頭覆蓋這些默認值。
 
-{% highlight yml %}
+```yml
 # in _cofig.yml
 defaults:
  - 
@@ -143,7 +143,7 @@ defaults:
     type: "pages"
    values: 
      layout: "project"
-{% endhighlight %}
+```
 
 ## Jekyll模版、變量
 
@@ -153,7 +153,7 @@ Jekyll模版分為兩部分，頭部定義以及Liquid語法。
 
 定義制定模版的變量，這裡的所有設置都可以覆蓋全局變量中的基礎配置。
 
-{% highlight yml %}
+```yml
 ---
 layout: post
 title: title
@@ -164,7 +164,7 @@ decription: description
 published: true
 permalink: none
 ---
-{% endhighlight %}
+```
 
 所有的變量都是樹節點，連接全局變量配置根節點。
 
@@ -232,21 +232,21 @@ Liquid是Ruby的一個模版引擎庫，Jekyll中用到Liquid標記有兩種：*
 
 ## Jekyll 輸出 Output
 
-{% highlight ruby %}
+```ryby
 Hello  { { name } }
 Hello  { { user.name } }
 Hello  { { 'Ben' } }
-{% endhighlight %}
+```
 
 Output標記可以使用過濾器Filters對輸出內容進行簡單處理。
 多個Filters間用竪線隔開，從左到右依次執行，Filter左邊總是輸入，返回值為下一個Filter的輸入或最終結果。
 
-{% highlight ruby %}
+```ruby
 Hello { { 'Ben' | upcase } }  # 轉換為大寫輸出
 Hello Ben has { { 'Ben' | size } } letters. # 字符串長度
 Hello { { '*Ben*' | markdownify | upcase } }  # 將Markdown字符串轉換成HTML大寫文本輸出
 Hello { { 'now' | date: "%Y %M %D" } }  # 按照指定格式輸出當前時間
-{% endhighlight %}
+```
 
 ## 過濾器Filters
 
@@ -304,19 +304,19 @@ unless	| if 語句的否定語句
 
 起到注釋Liquid代碼作用。
 
-{% highlight ruby  %}
+```ruby
 This is Benjamin. { % comment % } Comments { % endcomment % }
-{% endhighlight %}
+```
 
 **Raw**
 
 臨時禁止執行Jekyll Tag命令。
 
-{% highlight ruby %}
+```ruby
 { % raw % }
  This is a raw line. { % includ head % } will not show.
 { % endraw % }
-{% endhighlight %}
+```
 
 **If/Else**
 
@@ -326,50 +326,50 @@ This is Benjamin. { % comment % } Comments { % endcomment % }
 
 適用於條件實例很多的情況。
 
-{% highlight ruby %}
+```ruby
 { % case template % }
 { % when 'label' % }
 { % when 'product' % }
 { % else % }
 { % endcase % }
-{% endhighlight %}
+```
 
 **Cycle**
 
 經常需要在相似的任務間選擇時，可以使用`cycle`標籤。
 
-{% highlight ruby %}
+```ruby
 { % cycle 'one', 'two', 'three' % }
 { % cycle 'one', 'two', 'three' % }
-{% endhighlight %}
+```
 
 同時可以指定循環名稱進行分組處理。
 
-{% highlight ruby %}
+```ruby
 { % cycle 'group1': 'one', 'two', 'three' % }
-{% endhighlight %}
+```
 
 **For loops**
 
 循環遍歷數組。
 
-{% highlight ruby %}
+```ruby
 { % for item in array % }
 { { item } }
 { % endfor % }
-{% endhighlight %}
+```
 
 循環迭代Hash散列，`item[0]`是鍵，`item[1]`是值。
 
-{% highlight ruby %}
+```ruby
 { % for item in hash % }
 { { item[0] } }: { { item[1] } }
 { % endfor % }
-{% endhighlight %}
+```
 
 每個循環週期，提供下面幾個可用的變量：
 
-{% highlight ruby %}
+```ruby
 forloop.length  # => length of the entire for loop
 forloop.index  # => index of the current iteration
 forloop.index0  # => index of the current iteration (zero based)
@@ -377,7 +377,7 @@ forloop.rindex  # => how many items are still left?
 forloop.rindex0  # => how many items are still left? (zero based)
 forloop.first  # => is this the first iteration? 
 forloop.last  # => is this the last iteration? 
-{% endhighlight %}
+```
 
 還有幾個屬性用來限定循環過程：
 
@@ -389,7 +389,7 @@ forloop.last  # => is this the last iteration?
 
 為變量賦值，用於輸出或其他Tag。
 
-{% highlight ruby %}
+```ruby
 { % assign index = 1 % }
 { % assign name = 'freestyle' % }
 
@@ -409,7 +409,7 @@ forloop.last  # => is this the last iteration?
 { % if freestyle % }
   Freestyle!
 { % endif % }
-{% endhighlight %}
+```
 
 `capture`允許將大量字符串合併為單個字符串並賦值給變量，而不會輸出顯示。
 
@@ -417,22 +417,22 @@ forloop.last  # => is this the last iteration?
 
 **格式化時間**
 
-{% highlight ruby %}
+```ruby
 { { site.time | date_to_xmlschema } }     # => 2008-11-07T13:07:54-08:00
 { { site.time | date_to_rfc822 } }        # => Mon, 07 Nov 2008 13:07:54 -0800
 { { site.time | date_to_string } }        # => 07 Nov 2008
 { { site.time | date_to_long_string } }   # => 07 November 2008
-{% endhighlight %}
+```
 
 **代碼語法高亮**
 
 安裝`pygments.rb`的`gem`組件和Python 2.x後，配置文件添加`highlighter:pygmnts`，就可以使用語法高亮了。
 
-{% highlight ruby %}
+```ruby
 { % highlight ruby linenos % }
 # some ruby codes
 { % endhighlight % }
-{% endhighlight %}
+```
 
 *參數*  
 `ruby`：指定語言  
@@ -445,46 +445,46 @@ forloop.last  # => is this the last iteration?
 配置文件中設定`excerpt_separator`取值，每篇post都會自動截取從開始到這個值間的內容作為這篇文的摘要`post.excerpt`使用。  
 如果要禁用某篇文章的摘要，可以在該篇文章YAML頭部設定`excerpt_separator: ""`。
 
-{% highlight html %}
+```html
 { % for post in site.posts % }
 <a href="{ { post.url } }">{ { post.title } }</a>
 { { post.exceerpt | remove: 'test' } }
 { % endfor % }
-{% endhighlight %}
+```
 
 **刪除HTML標籤**
 
 這個在摘要作為`head`標籤里的`meta="description"`內容輸出時很有用。
 
-{% highlight ruby %}
+```ruby
 { { post.excerpt | strp_html } }
-{% endhighlight %}
+```
 
 **刪除指定文本**
 
 過濾器`remove`可以刪除變量中的指定內容。
 
-{% highlight ruby %}
+```ruby
 { { post.url | remove: 'http' } }
-{% endhighlight %}
+```
 
 **CGI Escape**
 
 通常用於將URL中的特殊字符轉義為`%xx`形式。
 
-{% highlight ruby %}
+```ruby
 { { "foo.bar;baz?" | cgi_escape } }  # => foo%2Cbar%3Bbaz%3F
-{% endhighlight %}
+```
 
 **排序**
 
-{% highlight ruby %}
+```ruby
 # Sort an array. Optional arguments for hashes:
 #   1. property name
 #   2. nils order ('first' or 'last')
 
 { { site.pages | sort: 'title', 'last' } }
-{% endhighlight %}
+```
 
 ## Assets 樣式文件
 

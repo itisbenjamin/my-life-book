@@ -6,11 +6,11 @@ subtitle: "I want to put these basic grammar all together here. To make things m
 
 Stands for Cascading Style Sheets. Used to describe HTML elements styles. 
 
-{% highlight css %}
+```css
 h1 {
   color: red;
 }
-{% endhighlight %}
+```
 
 ## Style
 
@@ -18,25 +18,25 @@ Style sheets are typically written in a separate file, but you can also apple st
 
 But style attribute can only be applied to individual elements. 
 
-{% highlight html %}
+```html
 <body>
   <h1 style="color: red">
     Site Name
   </h1>
 </body>
-{% endhighlight %}
+```
 
 ## Link
 
 Link your CSS file. 
 
-{% highlight html %}
+```html
 <head>
   <link rel="stylesheet"
     type="text/css"
     href="/styles.css">
 </head>
-{% endhighlight %}
+```
 
 ## Selectors
 
@@ -46,11 +46,11 @@ Selectors find HTML elements based on ID, class, element name and more.
 
 Using `*` to select all elements. 
 
-{% highlight css %}
+```css
 * {
   color: #;
 }
-{% endhighlight %}
+```
 
 **Color**
 
@@ -70,15 +70,15 @@ Meassuring your browser elements.
 
 The syntax is `.classname` in your CSS file when using class selectors. 
 
-{% highlight html %}
+```html
 <div class="header">
-{% endhighlight %}
+```
 
-{% highlight css %}
+```css
 .header {
   color: #;
 }
-{% endhighlight %}
+```
 
 **IDs**
 
@@ -86,15 +86,15 @@ If you assign an ID attribute in your HTML file, then that is applied to a singl
 
 Using the syntax `#diname` to declare an ID selector. 
 
-{% highlight html %}
+```html
 <div id="title">
-{% endhighlight %}
+```
 
-{% highlight css %}
+```css
 #title {
   color: #;
 }
-{% endhighlight %}
+```
 
 **Psuedo classes**
 
@@ -102,15 +102,15 @@ Be used when styles change due to an action occuring.
 
 Using `action` selector to show how a link color changes from blue to purple once clicked: 
 
-{% highlight html %}
+```html
 <a href="http://">
-{% endhighlight %}
+```
 
-{% highlight css %}
+```css
 a:active {
   color: purple;
 }
-{% endhighlight %}
+```
 
 ## Properties
 
@@ -118,12 +118,12 @@ Define the styles being applied to the selector.
 
 Selectors can hold multiple properties. 
 
-{% highlight css %}
+```css
 h2 {
   color: #;
   font-size: 10px;
 }
-{% endhighlight %}
+```
 
 All properties need assigned values. It is necessary to add a semicolon after each propery-value pair. 
 
@@ -131,32 +131,32 @@ All properties need assigned values. It is necessary to add a semicolon after ea
 
 Set the size and type of font for your element. 
 
-{% highlight css %}
+```css
 h1 {
   font: 15px Chalkduster;
 }
-{% endhighlight %}
+```
 
 **Background-color**
 
 Add a color to the background of an element. 
 
-{% highlight css %}
+```css
 h1 {
   background-color: green;
 }
-{% endhighlight %}
+```
 
 **Width & Height**
 
 Provides a fixed width and height to an element. 
 
-{% highlight css %}
+```css
 img {
   height: 30px;
   width: 50px;
 }
-{% endhighlight %}
+```
 
 ## Spacing
 
@@ -168,20 +168,20 @@ This model gives every HTML element a `margin`, `border`, `padding` and `content
 
 The first layer. If you have a margin of 10px there will be 10px of spacing on the left, right, to and bottom of your content. 
 
-{% highlight html %}
+```html
 <body>
   <div id="box"></div>
 </body>
-{% endhighlight %}
+```
 
-{% highlight css %}
+```css
 #box {
   height: 50px;
   width: 50px;
   border: 1px solid red;
   margin: 10px;
 }
-{% endhighlight %}
+```
 
 `margin` applies a margin to all sides of your content. You can also specify margins separately with margin-right, margin-left, top & bottom. 
 
@@ -211,15 +211,15 @@ Adds space between the content and the border.
 
 Content can be images, text or anything else you want to add on your web pages.
 
-{% highlight html %}
+```html
 <body>
   <div>
   Content
   </div>
 </bode>
-{% endhighlight %}
+```
 
-{% highlight css %}
+```css
 div {
   height: 50px;
   width: 50px;
@@ -228,7 +228,7 @@ div {
   margin: 10px;
   padding:15px; 
 }
-{% endhighlight %}
+```
 
 ## Positioning
 
@@ -240,13 +240,13 @@ How you section off portions of your website.
 
 Such as `div` is a container. 
 
-{% highlight css %}
+```css
 div {
   background-color: #eeeeee;
   height: 50px;
   width: 50px;
 }
-{% endhighlight %}
+```
 
 **Display**
 

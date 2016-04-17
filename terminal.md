@@ -223,24 +223,24 @@ Visual。是Command Line中最常見的文本編輯器，進入VI模式後，會
 
 顯示：
 
-{% highlight shell %}
+```sh
 $ defaults write com.apple.finder AppleShowAllFiles -bool true
 $ killall Finder
-{% endhighlight %}
+```
     
 隱藏：
 
-{% highlight shell %}
+```sh
 $ defaults write com.apple.finder AppleShowAllFiles -bool false
 $ killall Finder
-{% endhighlight %}
+```
     
 ### Finder標題欄顯示完整路徑 
 
-{% highlight shell %}
+```sh
 $ defaults write com.apple.finder _FXShowPosixPathInTitle -bool YES
 $ killall Finder
-{% endhighlight %}
+```
     
 ### 改變截圖陰影
 
@@ -248,24 +248,24 @@ $ killall Finder
 
 去掉陰影：
 
-{% highlight shell %}
+```sh
 $ defaults write com.apple.screencapture disable-shadow -bool true
 $ killall SystemUSServer
-{% endhighlight %}
+```
     
 保留陰影:
 
-{% highlight shell %}
+```sh
 $ defaults write com.apple.screencapture disable-shadow -bool false
 $ killall SystemUSServer
-{% endhighlight %}
+```
     
 ## 改變截圖保存位置
 
-{% highlight shell %}
+```sh
 $ defaults write com.apple.screencapture location /Users/Ben/Screencapture
 $ killall SystemUIServer
-{% endhighlight %}
+```
     
 ---
 
@@ -372,5 +372,5 @@ w	| 顯示當前系統活動的總信息 | w
     <p>The UNIX Philosophy</p>
 </center>
 
-<div class="eof"></div>
+
 
