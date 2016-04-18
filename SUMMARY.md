@@ -2,6 +2,7 @@
 
 * [Introduction](README.md)
 * [2016](2016.md)
+  * [Disk Utility Command Line](diskutil.md)
   * [7z Command Line](7z.md)
   * [結合 Carina 部署 Docker 鏡像](carina-docker.md)
   * [隱匿化使用 Wikipedia](wiki-security.md)
