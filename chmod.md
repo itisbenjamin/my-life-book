@@ -18,7 +18,7 @@ Linux 系統中訪問權限有三種，分別是可讀、可寫、可運營權�
 
 * `r`：可讀權限，讀取文件或文件夾中的內容
 * `w`：可寫權限，對文件進行編輯修改，寫入內容到目錄中
-* 'x`：可執行權限，將文件作為執行文件執行，進入目錄並以目錄名稱作為路徑名訪問它所包含的子目錄和文件
+* `x`：可執行權限，將文件作為執行文件執行，進入目錄並以目錄名稱作為路徑名訪問它所包含的子目錄和文件
 
 **說明**
 
@@ -39,10 +39,10 @@ $ chmod [option] [mode] file
   `-c, --changes`          like verbose but report only when a change is made   在文件權限更改後再顯示更改動作  
   `-f, --silent, --quiet`  suppress most error messages   權限無法更改也不顯示錯誤信息  
   `-v, --verbose`          output a diagnostic for every file processed   輸出詳細信息   
-      `--no-preserve-root`  do not treat '/' specially (the default)
-      `--preserve-root`    fail to operate recursively on '/'
-      `--reference=RFILE`  use RFILE's mode instead of MODE values
-  `-R, --recursive`        change files and directories recursively   遞歸權限變更命令
+      `--no-preserve-root`  do not treat '/' specially (the default)  
+      `--preserve-root`    fail to operate recursively on '/'  
+      `--reference=RFILE`  use RFILE's mode instead of MODE values  
+  `-R, --recursive`        change files and directories recursively   遞歸權限變更命令  
 
 ### 對象
   
