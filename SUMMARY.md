@@ -4,6 +4,7 @@
 * [2016](2016.md)
   * [Chmod Command Line](chmod.md)
   * [Disk Utility Command Line](diskutil.md)
+  * [Python 算法練習](python.md)
   * [7z Command Line](7z.md)
   * [結合 Carina 部署 Docker 鏡像](carina-docker.md)
   * [隱匿化使用 Wikipedia](wiki-security.md)
